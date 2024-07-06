@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:browser": "esbuild src/entry.browser.tsx --bundle --platform=browser --format=esm --outfile=dist/browser/entry.browser.js",
+    "build:server": "esbuild src/entry.server.tsx --bundle --platform=node --format=esm --outfile=dist/server/entry.server.js",
+    "start": "pnpm build:browser && pnpm build:server && node server.js"
+  },
+  "dependencies": {
+    "esbuild": "0.23.0",
+    "preact": "10.22.1",
+    "preact-render-to-string": "6.5.5",
+    "serve-handler": "6.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.10"
+  }
+}
